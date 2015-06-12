@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form>
+      <div class="form-group">
+        <label>Choose a type to change:</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="formType" id="type_categories" value="categories" checked>
+            Categories
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="formType" id="type_products" value="products">
+            Products
+          </label>
+        </div>
+      </div>
+      <div class="form-group choose-action">
+        <label>Choose an action:</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="formAction" id="action_new" value="new" checked>
+            New
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="formAction" id="action_edit" value="edit">
+            Edit
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="formAction" id="action_delete" value="delete">
+            Delete
+          </label>
+        </div>
+      </div>
+      {{#if delete}}
+      {{#if category}}
+      {{view adminCategory}}
+      {{else}}
+      {{view adminProduct}}
+      {{/if}}
+      {{else}}
+        {{#if category}}
+          {{#if edit}}
+          {{view adminCategory}}
+          {{/if}}
+          <div class="form-group">
+            <label for="category-name">Enter name: *</label>
+            <input name="name" type="text" class="form-control" id="category-name" required pattern="^[\w- ']+$">
+          </div>
+        {{else}}
+          {{#if edit}}
+          {{view adminProduct}}
+          {{/if}}
+          {{view adminCategory}}
+          <div class="form-group">
+            <label for="product-name">Enter name: *</label>
+            <input type="text" class="form-control" id="product-name" name="name" required pattern="^[\w- ']+$">
+          </div>
+          <div class="form-group">
+            <label for="product-price">Enter price: *</label>
+            <input type="text" class="form-control" id="product-price" name="price" required pattern="^\d+(?:\.\d{1,2})?$">
+          </div>
+          <div class="form-group">
+            <label for="product-description">Description:</label>
+            <textarea class="form-control" rows="3" id="product-description" name="description" pattern="^[\w- ',\r\n]+$"></textarea>
+          </div>
+          {{#if photo}}
+          <label>Photo:</label>
+          <br />
+          <img src="{{{yubl (yavd (yufull photo))}}}" alt=""/>
+          {{/if}}
+          <div class="form-group">
+            <label for="product-photo">Upload photo: *</label>
+            <input class="form-control" type="file" id="product-photo" name="photo" data-url="/upload" accept="image/*" required>
+            <img id="preview" src="#" width="80" height="80" />
+          </div>
+        {{/if}}
+      {{/if}}
+      <br />
+      <button type="submit" class="btn btn-default">Submit</button>
+      <hr />
+      {{view changepw}}
+      <hr />
+      <button id="logout-link" class="btn btn-default">Sign Out</button>
+      <button id="remove-account-link" class="btn btn-default">Remove Account</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{{! Calling RootView.getInstance().setView(view) will place a view where layout-element is called below. }}
+<header>
+  {{view navbar}}
+</header>
+<div class="container-fluid">
+  {{layout-element}}
+  <hr>
+  <footer>
+    <p class="text-muted">IERG4210 WEB PROGRAMMING AND SECURITY (2015 SPRING) {{#link href="admin" expand-tokens=true class="pull-right"}}Admin Panel{{/link}}</p>
+  </footer>
+</div>

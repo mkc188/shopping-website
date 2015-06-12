@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Payment ID</th>
+          <th>State</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      {{#collection tag="tbody"}}
+      <tr>
+        <td>{{#button "showDetails" tag="a" href="#account"}}{{{yd paymentId}}}{{/button}}</td>
+        <td>{{{yd state}}}</td>
+        <td>{{{yd createdAt}}}</td>
+      </tr>
+      {{/collection}}
+    </table>
+    <form>
+      <hr />
+      {{view changepw}}
+      <hr />
+      <button id="logout-link" class="btn btn-default">Sign Out</button>
+      <button id="remove-account-link" class="btn btn-default">Remove Account</button>
+    </form>
+  </div>
+  <div class="col-sm-6" id="detail-div">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Photo</td>
+          <td>Price</td>
+          <td>Quantity</td>
+          <td>Subtotal</td>
+        </tr>
+      </thead>
+    {{#collection paymentCollection tag="tbody"}}
+    <tr>
+      <td>{{{yd name}}}</td>
+      <td><img src="{{{yubl (yavd (yufull photo))}}}" width="64" height="64"/></td>
+      <td>{{{yd price}}}</td>
+      <td>{{{yd quantity}}}</td>
+      <td>{{{yd subtotal}}}</td>
+    </tr>
+    {{/collection}}
+    <tfoot>
+      <tr>
+        <td>Total: $ <span id="total">0.00</span></td>
+      </tr>
+    </tfoot>
+    </table>
+  </div>
+
+  <img id="detail-loading" src="loading.gif" width="48" height="48">
+</div>

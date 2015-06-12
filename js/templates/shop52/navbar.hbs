@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Shop52</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" id="basket-message" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-expanded="false">You have <span id="basket">0</span> items in your shopping list <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <div class="col-sm-12 clearfix">
+              <li>
+                <table id="shopping-cart" class="table table-responsive">
+                  {{#collection tag="tbody" id="shopping-list"}}
+                    <tr>
+                      <td><span data-id={{{yavu id}}} class="remove-item glyphicon glyphicon-remove"></span> {{{yd name}}}</td>
+                      <td>
+                        <input data-id={{{yavu id}}} type="text" value={{{yavu quantity}}} class="qty input-sm" name="change-quantity">
+                        <td>$ {{{yd subtotal}}}</td>
+                    </tr>
+                  {{/collection}}
+                  <tfoot>
+                    <tr>
+                      <td>Total: $ <span id="total">0.00</span></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </li>
+              <li class="divider"></li>
+              <li>
+                {{#link href="checkout" expand-tokens=true class=" btn btn-primary pull-right"}}Check out{{/link}}
+              </li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

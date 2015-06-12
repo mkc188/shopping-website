@@ -1,0 +1,22 @@
+<div class="row">
+  {{#collection id="default-item-list"}}
+  <article class="col-md-3 col-sm-4 col-xs-6 vertical-center infos">
+    {{#link "product/{{id}}-{{name}}" expand-tokens=true}}
+      <img src="{{{yubl (yavd (yufull  photo ))}}}" class="img-responsive center-block" />
+    {{/link}}
+    <div class="clearfix">
+      <div class="pull-right price">
+        $ {{{yd  price }}}
+      </div>
+    </div>
+    <div>
+      <h4 class="name">{{{yd  name }}}</h4>
+      <button data-id="{{{yavd id}}}" class="btn btn-danger btn-sm add-to-cart">Add to cart</button>
+      {{#link "product/{{id}}-{{name}}" expand-tokens=true}}
+      <button class="btn btn-primary btn-sm">More Info</button>
+      {{/link}}
+    </div>
+  </article>
+  {{/collection}}
+  {{view pagination}}
+</div>

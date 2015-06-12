@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h3>Error page</h3>
+    <hr />
+    {{#if token}}
+    You have cancelled the payment.
+    <hr />
+    <a href="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token={{{yavd (yuc token)}}}" class="btn btn-success">Retry Payment</a>
+    {{else}}
+    Oops. The payment has encountered an error.
+    <hr />
+    {{/if}}
+    <a href="/" class="btn btn-default">Back to Home</a>
+  </div>
+</div>

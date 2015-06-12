@@ -1,0 +1,80 @@
+body {
+  padding-top: 70px;
+}
+.vertical-center {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+img {
+  padding: 10px;
+}
+.breadcrumb a {
+  text-decoration: underline;
+}
+#default-item-list .clearfix {
+  padding: 15px;
+}
+#default-item-list .infos {
+  background: white;
+  padding: 15px;
+  text-align: center;
+}
+#default-item-list .name {
+  margin: 0 0 7px;
+  font-size: 22px;
+  line-height: 30px;
+  display: block;
+}
+#default-item-list .price {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #C0392B;
+  margin: -8px 15px 0 0;
+}
+#detail {
+  position: relative;
+}
+#detail h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+#detail .description {
+  margin: 20px 0;
+}
+#detail .product-price {
+  margin: 0;
+  padding: 5px 10px;
+  background-color: #FFFFFF;
+  color: #C0392B;
+  text-align: left;
+  border: 2px dashed #E0E0E0;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+}
+#detail #back {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+table {
+  white-space: nowrap;
+}
+input[name='change-quantity'] {
+  min-width: 50px;
+}
+#header-alert {
+  display:none;
+}
+#detail-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+#detail-div {
+  position: fixed;
+  left: 50%;
+}
